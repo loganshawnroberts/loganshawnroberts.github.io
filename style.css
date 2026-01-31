@@ -1,53 +1,39 @@
-/* ====================================== */
-/* GLOBAL TYPOGRAPHY AND BASE STYLES      */
-/* ====================================== */
-
-* {
-    font-family: 'EB Garamond', serif !important;
-}
+/* GLOBAL */
+* { font-family: 'EB Garamond', serif !important; }
 
 body {
     margin: 0;
-    padding: 0;
-    background: #ffffff;
+    background: #fff;
     color: #333;
     overflow-x: hidden;
 }
 
-/* ====================================== */
-/* FIXED LEFT MENU & FIXED RIGHT SIDEBAR  */
-/* ====================================== */
-
-/* FIXED LEFT NAVIGATION */
+/* FIXED LEFT MENU */
 .left-menu {
     position: fixed;
     top: 40px;
-    left: 40px;
+    left: 30px;
     width: 140px;
-    z-index: 1000;
+    z-index: 999;
 }
 
-.left-menu p {
-    margin: 0 0 14px 0;
-}
+.left-menu p { margin-bottom: 14px; }
 
 .left-menu a {
-    text-decoration: none;
     font-size: 1.3rem;
+    text-decoration: none;
     color: #333;
 }
 
-.left-menu a:hover {
-    text-decoration: underline;
-}
+.left-menu a:hover { text-decoration: underline; }
 
-/* FIXED RIGHT SIDEBAR */
+/* FIXED RIGHT NAV */
 .right-nav {
     position: fixed;
     top: 40px;
-    right: 40px;
+    right: 30px;
     width: 160px;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .right-title {
@@ -56,175 +42,125 @@ body {
     margin-bottom: 10px;
 }
 
-.right-nav ul {
-    list-style: none;
-    padding-left: 0;
-}
+.right-nav ul { list-style: none; padding: 0; }
 
-.right-nav li {
-    margin-bottom: 10px;
-}
+.right-nav li { margin-bottom: 10px; }
 
 .right-nav a {
     text-decoration: none;
     color: #333;
 }
 
-.right-nav a:hover {
+.right-nav a:hover { text-decoration: underline; }
+
+/* ACTIVE SCROLLSPY LINK */
+.active-spy {
+    font-weight: bold;
     text-decoration: underline;
 }
 
-/* ====================================== */
-/* MAIN CONTENT (CENTER COLUMN)           */
-/* ====================================== */
-
+/* MAIN CONTENT */
 .main-content {
     max-width: 700px;
-    margin-left: 200px;  /* leave room for fixed left menu */
-    margin-right: 240px; /* leave room for fixed right sidebar */
+    margin-left: 220px;  /* space for fixed left menu */
+    margin-right: 240px; /* space for fixed right column */
+    padding-bottom: 100px;
 }
 
 /* HEADER */
-.header-table {
-    width: 100%;
-    margin-bottom: 40px;
-}
-
 .profile {
     width: 170px;
     height: 170px;
-    object-fit: cover;
     border: 1px solid #aaa;
-    border-radius: 0;
+    object-fit: cover;
 }
 
-/* TITLE (same size as degree lines) */
-.title {
-    font-size: 1.2rem;
-    margin-top: 8px;
-}
+.title { font-size: 1.2rem; }
 
 /* SECTION HEADERS */
 h2 {
     font-size: 2rem;
     border-bottom: 1px solid #ccc;
     margin-top: 40px;
-    padding-bottom: 5px;
 }
 
-/* ====================================== */
-/* EDUCATION SECTION (2×2 GRID)           */
-/* ====================================== */
-
+/* EDUCATION GRID */
 .education-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    margin-top: 25px;
 }
 
-.edu-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.edu-crest {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-.edu-school {
-    font-size: 1.4rem;
-    font-variant-caps: small-caps;
-    margin: 0 0 5px 0;
-}
-
-.edu-degree {
-    font-size: 1.2rem;
-    margin: 0 0 10px 0;
-}
-
-/* Slightly smaller bullet text */
-.edu-list li {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    margin-bottom: 6px;
-}
-
-/* ====================================== */
-/* WORK SECTION (3×2 GRID, same style)    */
-/* ====================================== */
-
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-top: 25px;
-}
-
-.work-item {
-    display: flex;
-    flex-direction: column;
-}
-
+.edu-crest,
 .work-logo {
     width: 60px;
     height: 60px;
-    object-fit: contain;
     margin-bottom: 15px;
+    object-fit: contain;
 }
 
+.edu-school,
 .work-title {
     font-size: 1.4rem;
     font-variant-caps: small-caps;
     margin-bottom: 5px;
 }
 
-.work-org {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
+.edu-degree { font-size: 1.2rem; }
 
-.work-list li {
+.edu-list li,
+.work-desc {
     font-size: 1.05rem;
-    margin-bottom: 6px;
+    line-height: 1.5;
 }
 
-/* ====================================== */
-/* CONTACT FORM                           */
-/* ====================================== */
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
+/* WORK GRID */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
-.contact-form label {
-    margin-top: 15px;
-    font-size: 1.2rem;
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #777;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
-    font-size: 1.1rem;
-}
+/* MOBILE */
+@media (max-width: 900px) {
 
-.contact-form button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
+    .left-menu,
+    .right-nav {
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-.contact-form button:hover {
-    background-color: #555;
+    .left-menu p {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .education-grid,
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .right-nav {
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+    }
+
+    .right-nav li {
+        display: inline-block;
+        margin: 0 10px;
+    }
 }
