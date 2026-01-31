@@ -1,86 +1,112 @@
-/* Global font enforcement */
+/* EB Garamond everywhere */
 * {
     font-family: 'EB Garamond', serif !important;
 }
 
-/* Layout */
 body {
     margin: 0;
     padding: 0;
-    display: flex;
-    background: #fafafa;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 180px;
-    background: #f5f5f5;
-    min-height: 100vh;
-    border-right: 1px solid #ccc;
-    padding-top: 40px;
-    position: fixed;
-}
-
-.sidebar nav {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-}
-
-.sidebar a {
+    background: #ffffff;
     color: #333;
-    text-decoration: none;
-    margin: 12px 0;
-    font-size: 1.2rem;
 }
 
-.sidebar a:hover {
+/* Main layout: two-column, like Ryan's */
+.container {
+    display: flex;
+    max-width: 1050px;
+    margin: 40px auto;
+}
+
+/* LEFT NAV COLUMN */
+.nav-column {
+    width: 180px;
+    padding-right: 20px;
+}
+
+.nav-column a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.nav-column a:hover {
     text-decoration: underline;
 }
 
-/* Main content area */
-.content {
-    margin-left: 200px; /* creates space for sidebar */
-    padding: 30px;
-    max-width: 850px;
+/* CONTENT COLUMN */
+.content-column {
+    flex-grow: 1;
+    max-width: 750px;
 }
 
-/* Table Layout */
-.layout-table {
+/* HEADER TABLE */
+.header-table {
     width: 100%;
+    margin-bottom: 40px;
 }
 
-.left-col {
+.photo-col {
     width: 200px;
     vertical-align: top;
 }
 
-.right-col {
-    padding-left: 25px;
-}
-
-/* Profile photo as perfect circle */
 .profile {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
+    object-fit: cover;
     border: 1px solid #aaa;
 }
 
-/* Text styling */
-h1 {
+.name {
     font-size: 2.4rem;
     margin-bottom: 5px;
 }
 
+.title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* SECTION HEADERS */
+h2 {
+    font-size: 2rem;
+    border-bottom: 1px solid #ccc;
+    margin-top: 50px;
+    padding-bottom: 5px;
+}
+
+/* TABLES FOR EDUCATION & WORK SECTIONS (matches Ryan) */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.label {
+    width: 30%;
+    font-weight: 600;
+    vertical-align: top;
+    padding-right: 20px;
+}
+
+.info-table td {
+    padding-bottom: 15px;
+    vertical-align: top;
+}
+
+/* CONTACT */
 p {
     font-size: 1.2rem;
 }
 
-/* Footer */
 footer {
-    margin-top: 40px;
-    color: #777;
+    margin-top: 50px;
     font-size: 1rem;
+    color: #777;
 }
