@@ -5,40 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logan Roberts</title>
 
+    <!-- EB Garamond -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
 
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="education.html">Education</a>
-            <a href="work.html">Work</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </aside>
+<div class="container">
 
-    <!-- Main Content -->
-    <main class="content">
-        <table class="layout-table">
+    <!-- LEFT NAV COLUMN -->
+    <div class="nav-column">
+        <p><a href="#home">Home</a></p>
+        <p><a href="#education">Education</a></p>
+        <p><a href="#work">Work</a></p>
+        <p><a href="#contact">Contact</a></p>
+    </div>
+
+    <!-- MAIN CONTENT COLUMN -->
+    <div class="content-column">
+
+        <!-- HEADER -->
+        <a id="home"></a>
+        <table class="header-table">
             <tr>
-                <td class="left-col">
+                <td class="photo-col">
                     <img src="images/me.jpg" class="profile" alt="Profile photo">
                 </td>
-                <td class="right-col">
-                    <h1>Logan Roberts</h1>
-                    <p>Educator</p>
+                <td class="intro-col">
+                    <h1 class="name">Logan Roberts</h1>
+                    <p class="title">Educator</p>
+                    <p class="intro">
+                        I teach grades 9–12 with a focus on Social Studies and History.
+                        This website contains my background, education, and teaching work.
+                    </p>
                 </td>
             </tr>
         </table>
 
+        <!-- EDUCATION -->
+        <a id="education"></a>
+        <h2>Education</h2>
+        <table class="info-table">
+            <tr>
+                <td class="label">School Name</td>
+                <td>
+                    Degree (Years)<br>
+                    • Notes<br>
+                    • Coursework / Honors
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Another School</td>
+                <td>
+                    Degree / Program<br>
+                    • Anything additional
+                </td>
+            </tr>
+        </table>
+
+        <!-- WORK -->
+        <a id="work"></a>
+        <h2>Work</h2>
+        <table class="info-table">
+            <tr>
+                <td class="label">Job Title</td>
+                <td>
+                    School / District (Years)<br>
+                    • Responsibilities<br>
+                    • Notable accomplishments
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">Another Job</td>
+                <td>
+                    Organization<br>
+                    • Duties<br>
+                    • Notes
+                </td>
+            </tr>
+        </table>
+
+        <!-- CONTACT -->
+        <a id="contact"></a>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+
         <footer>
             © 2026 Logan Roberts
         </footer>
-    </main>
+
+    </div>
+</div>
 
 </body>
 </html>
