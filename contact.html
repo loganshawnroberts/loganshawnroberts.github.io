@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Logan Roberts</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=21">
+</head>
+
+<body>
+
+<div class="outer-container">
+
+    <!-- LEFT MENU -->
+    <aside class="left-menu">
+        <p><a href="index.html">Home</a></p>
+        <p><a href="contact.html">Contact</a></p>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <h1>Contact Me</h1>
+        <p>If you'd like to get in touch, please fill out the form below.</p>
+
+        <form action="https://formsubmit.co/loganshawnroberts@gmail.com" method="POST" class="contact-form">
+
+            <!-- FormSubmit settings -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New message from your website">
+            <input type="hidden" name="_next" value="https://loganshawnroberts.com/contact.html?sent=true">
+
+            <label>Your Name</label>
+            <input type="text" name="name" required>
+
+            <label>Your Email</label>
+            <input type="email" name="email" required>
+
+            <label>Subject</label>
+            <input type="text" name="subject" required>
+
+            <label>Message</label>
+            <textarea name="message" rows="6" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <footer>
+            © 2026 Logan Roberts
+        </footer>
+
+    </main>
+
+    <!-- Empty right column for layout symmetry -->
+    <aside class="right-nav"></aside>
+
+</div>
+
+</body>
+</html>
 
