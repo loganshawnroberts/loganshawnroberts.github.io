@@ -7,35 +7,14 @@
 
     <!-- EB Garamond -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Important: bump version number whenever CSS updates -->
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=1">
 </head>
 
 <body>
 
-<!-- ============================================================
-     MOBILE HAMBURGER + MOBILE SLIDE-IN MENU
-     (Appears ONLY on mobile)
-============================================================ -->
-<div class="mobile-menu-button" onclick="openMenu()">&#9776;</div>
-
-<div id="mobileMenu" class="mobile-menu">
-    <div class="mobile-menu-close" onclick="closeMenu()">×</div>
-
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#education" onclick="closeMenu()">Education</a>
-    <a href="#work" onclick="closeMenu()">Work</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
-</div>
-
-
-<!-- ============================================================
-     MAIN DESKTOP LAYOUT
-============================================================ -->
 <div class="container">
 
-    <!-- LEFT NAV COLUMN (DESKTOP ONLY) -->
+    <!-- LEFT NAV COLUMN -->
     <div class="nav-column">
         <p><a href="#home">Home</a></p>
         <p><a href="#education">Education</a></p>
@@ -108,28 +87,4 @@
         <!-- CONTACT -->
         <a id="contact"></a>
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:loganshawnroberts@gmail.com">loganshawnroberts@gmail.com</a></p>
-
-        <footer>
-            © 2026 Logan Roberts
-        </footer>
-
-    </div> <!-- end content-column -->
-</div> <!-- end container -->
-
-
-<!-- ============================================================
-     JAVASCRIPT FOR MOBILE MENU
-============================================================ -->
-<script>
-function openMenu() {
-    document.getElementById("mobileMenu").style.left = "0";
-}
-
-function closeMenu() {
-    document.getElementById("mobileMenu").style.left = "-100%";
-}
-</script>
-
-</body>
-</html>
+        <p>Email: <a href="mailto:loganshawnroberts@gmail.com">loganshawnroberts@gmail.com</a
