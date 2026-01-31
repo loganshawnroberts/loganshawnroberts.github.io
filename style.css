@@ -22,11 +22,15 @@ body {
     margin: 40px auto;
 }
 
-/* LEFT MENU */
-.left-menu {
-    padding-top: 10px;
+/* STICKY LEFT & RIGHT COLUMNS */
+.left-menu,
+.right-nav {
+    position: sticky;
+    top: 40px;
+    align-self: start;
 }
 
+/* LEFT MENU */
 .left-menu p {
     margin: 0 0 14px 0;
 }
@@ -47,11 +51,6 @@ body {
 }
 
 /* RIGHT SIDEBAR */
-.right-nav {
-    padding-top: 10px;
-    font-size: 1.1rem;
-}
-
 .right-title {
     font-size: 1.4rem;
     font-weight: bold;
@@ -89,7 +88,7 @@ body {
     border: 1px solid #aaa;
 }
 
-/* TITLE under your name now matches degree size */
+/* TITLE under name matches degree size */
 .title {
     font-size: 1.2rem;
     margin-top: 8px;
@@ -103,7 +102,7 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* EDUCATION – 2×2 GRID */
+/* EDUCATION GRID – 2×2 */
 .education-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -135,17 +134,29 @@ h2 {
 }
 
 .edu-list li {
-    font-size: 1.05rem; /* slightly smaller than degree */
+    font-size: 1.05rem;
     line-height: 1.5;
     margin-bottom: 6px;
 }
 
-/* WORK GRID – same layout */
+/* WORK GRID – 3×2 */
 .work-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     margin-top: 25px;
+}
+
+.work-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.work-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 15px;
 }
 
 .work-title {
@@ -164,40 +175,6 @@ h2 {
     margin-bottom: 6px;
 }
 
-/* CONTACT FORM */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-}
-
-.contact-form label {
-    margin-top: 15px;
-    font-size: 1.2rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
-    font-size: 1.1rem;
-}
-
-.contact-form button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.contact-form button:hover {
-    background-color: #555;
-}
-
 /* FOOTER */
 footer {
     margin-top: 40px;
@@ -206,7 +183,7 @@ footer {
 }
 
 /* ========================= */
-/* MOBILE & TABLET           */
+/* MOBILE */
 /* ========================= */
 
 @media (max-width: 900px) {
@@ -222,6 +199,7 @@ footer {
         padding-bottom: 20px;
         border-bottom: 1px solid #ddd;
         margin-bottom: 30px;
+        position: static;
     }
 
     .left-menu p {
@@ -229,24 +207,8 @@ footer {
         margin: 0 15px;
     }
 
-    .header-table {
-        text-align: center;
-    }
-
-    .profile {
-        margin: 0 auto 20px auto;
-    }
-
-    .intro-col {
-        text-align: center;
-    }
-
-    .education-grid,
-    .work-grid {
-        grid-template-columns: 1fr;
-    }
-
     .right-nav {
+        position: static;
         margin-top: 40px;
         border-top: 1px solid #ddd;
         padding-top: 20px;
@@ -258,7 +220,16 @@ footer {
         margin: 0 10px;
     }
 
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
     p, td, li {
         font-size: 1.2rem;
     }
 }
+
