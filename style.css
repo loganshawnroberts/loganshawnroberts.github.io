@@ -1,5 +1,10 @@
-/* GLOBAL */
-* { font-family: 'EB Garamond', serif !important; }
+/* ====================================== */
+/* GLOBAL TYPOGRAPHY AND BASE STYLES      */
+/* ====================================== */
+
+* { 
+    font-family: 'EB Garamond', serif !important; 
+}
 
 body {
     margin: 0;
@@ -8,20 +13,23 @@ body {
     overflow-x: hidden;
 }
 
-/* ======================= */
-/* FIXED LEFT NAVIGATION   */
-/* ======================= */
+
+/* ====================================== */
+/* FIXED LEFT NAVIGATION (DESKTOP ONLY)   */
+/* ====================================== */
 
 .left-menu {
     position: fixed;
-    top: 60px;                  
+    top: 60px;
     left: 40px;
-    width: 130px;               
+    width: 130px;
     line-height: 1.6;
     z-index: 999;
 }
 
-.left-menu p { margin-bottom: 12px; }
+.left-menu p {
+    margin-bottom: 12px;
+}
 
 .left-menu a {
     text-decoration: none;
@@ -29,35 +37,35 @@ body {
     color: #333;
 }
 
-.left-menu a:hover { text-decoration: underline; }
+.left-menu a:hover {
+    text-decoration: underline;
+}
 
-/* ======================= */
-/* FIXED RIGHT SIDEBAR     */
-/* ======================= */
+
+/* ====================================== */
+/* FIXED RIGHT SIDEBAR (DESKTOP ONLY)     */
+/* ====================================== */
 
 .right-nav {
     position: fixed;
     top: 60px;
-    right: 40px;
+    right: 20px;
     width: 110px;
-    text-align: right;      /* NEW: aligns all text to the right */
     line-height: 1.6;
     z-index: 999;
+    text-align: right;
 }
 
 .right-title {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 8px;
-    letter-spacing: 0.03em;
-    text-align: right;      /* NEW: aligns the title too */
 }
 
 .right-nav ul {
     list-style: none;
-    padding-left: 0;
-    padding-right: 0;       /* ensure no internal indentation */
     margin: 0;
+    padding: 0;
 }
 
 .right-nav li {
@@ -69,24 +77,34 @@ body {
     color: #333;
 }
 
-/* ACTIVE SCROLLSPY */
+.right-nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ACTIVE SCROLLSPY HIGHLIGHT (DESKTOP ONLY) */
 .active-spy {
     font-weight: bold;
     color: #4682B4 !important;
 }
 
-/* ======================= */
-/* MAIN CONTENT            */
-/* ======================= */
+
+/* ====================================== */
+/* MAIN CONTENT COLUMN                     */
+/* ====================================== */
 
 .main-content {
-    max-width: 950px;        /* was 720px — NOW fills the page properly */
-    margin-left: 220px;      /* leave room for left menu */
-    margin-right: 140px;     /* reduced dramatically */
+    max-width: 950px;
+    margin-left: 220px;
+    margin-right: 140px;
     padding-bottom: 100px;
 }
 
-/* HEADER */
+
+/* ====================================== */
+/* HEADER                                 */
+/* ====================================== */
+
 .header-table {
     width: 100%;
     margin-bottom: 40px;
@@ -95,30 +113,32 @@ body {
 .profile {
     width: 170px;
     height: 170px;
-    object-fit: cover;
     border: 1px solid #aaa;
-    margin-top: 25px;     
+    object-fit: cover;
+    margin-top: 25px;   /* Buffer above headshot */
 }
 
-/* TITLE under your name matches degree size */
 .title {
     font-size: 1.2rem;
     margin-top: 10px;
-    letter-spacing: 0.02em;
 }
 
-/* SECTION HEADERS */
+
+/* ====================================== */
+/* SECTION HEADERS                        */
+/* ====================================== */
+
 h2 {
     font-size: 2rem;
     border-bottom: 1px solid #ddd;
     margin-top: 50px;
     padding-bottom: 6px;
-    letter-spacing: 0.02em;
 }
 
-/* ======================= */
-/* EDUCATION GRID 2×2      */
-/* ======================= */
+
+/* ====================================== */
+/* EDUCATION — 2×2 GRID (DESKTOP)         */
+/* ====================================== */
 
 .education-grid {
     display: grid;
@@ -127,13 +147,16 @@ h2 {
     margin-top: 30px;
 }
 
-.edu-item { display: flex; flex-direction: column; }
+.edu-item {
+    display: flex;
+    flex-direction: column;
+}
 
 .edu-crest {
     width: 60px;
     height: 60px;
-    margin-bottom: 12px;
     object-fit: contain;
+    margin-bottom: 12px;
 }
 
 .edu-school {
@@ -153,26 +176,25 @@ h2 {
     margin-bottom: 6px;
 }
 
-/* ======================= */
-/* WORK SECTION (Ryan style)
-/* ======================= */
+
+/* ====================================== */
+/* WORK — 2 COLUMNS (Ryan-style)           */
+/* ====================================== */
 
 .work-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;  /* TWO columns like Ryan */
-    gap: 50px 50px;                  /* generous spacing */
-    margin-top: 25px;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 45px;
+    margin-top: 30px;
 }
 
 .work-item {
     display: grid;
-    grid-template-columns: 55px auto; /* crest left, text right */
+    grid-template-columns: 55px auto;
     gap: 14px;
     align-items: start;
-    line-height: 1.45;
 }
 
-/* crest sizing */
 .work-logo {
     width: 55px;
     height: 55px;
@@ -180,126 +202,6 @@ h2 {
     margin-top: 5px;
 }
 
-/* organization name */
 .work-title {
     font-size: 1.35rem;
-    font-variant-caps: small-caps;
-    margin: 0 0 6px 0;
-}
-
-/* description paragraph */
-.work-desc {
-    grid-column: 2;                 /* text only in right column */
-    font-size: 1.05rem;
-    margin-top: -2px;
-}
-
-/* FOOTER */
-footer {
-    margin-top: 60px;
-    font-size: 1rem;
-    color: #777;
-}
-
-/* ======================= */
-/* MOBILE RESPONSIVE       */
-/* ======================= */
-
-@media (max-width: 900px) {
-
-    /* REMOVE fixed behavior on mobile */
-    .left-menu,
-    .right-nav {
-        position: static;
-        width: 100%;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* LEFT MENU AS SIMPLE TOP NAV */
-    .left-menu {
-        border-bottom: 1px solid #ddd;
-        padding: 15px 0;
-        margin-bottom: 25px;
-    }
-
-    .left-menu p {
-        display: inline-block;
-        margin: 0 15px;
-    }
-
-    /* MOVE ON-THIS-PAGE MENU BELOW HEADER */
-    .right-nav {
-        border-top: 1px solid #ddd;
-        padding-top: 15px;
-        margin-top: 25px;
-    }
-
-    .right-nav li {
-        display: inline-block;
-        margin: 0 12px;
-    }
-
-    /* MAIN CONTENT FULL WIDTH */
-    .main-content {
-        max-width: 95%;           /* nearly full width */
-        margin: 0 auto !important;
-        padding: 0 10px;
-    }
-
-    /* HEADER CENTER REALIGNMENT */
-    .header-table {
-        width: 100%;
-        text-align: center;
-    }
-
-    .profile {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto 15px;
-    }
-
-    .intro-col {
-        text-align: center;
-        padding: 0 15px;
-    }
-
-    /* EDUCATION & WORK GO TO SINGLE COLUMN */
-    .education-grid,
-    .work-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    /* WORK ITEM CLEAN STACK */
-    .work-item {
-        grid-template-columns: 50px auto;
-        gap: 12px;
-        text-align: left;
-        padding-bottom: 10px;
-    }
-
-    .work-logo {
-        width: 50px;
-        height: 50px;
-    }
-
-    h2 {
-        margin-top: 35px;
-        text-align: center;
-    }
-
-    /* TEXT READABILITY */
-    p, li {
-        font-size: 1.15rem;
-        line-height: 1.55;
-    }
-
-    footer {
-        text-align: center;
-        margin-top: 40px;
-        padding-bottom: 30px;
-    }
-}
-
+    font-variant-caps: small-ca
