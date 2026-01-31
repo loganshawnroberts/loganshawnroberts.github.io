@@ -8,6 +8,7 @@ body {
     padding: 0;
     background: #ffffff;
     color: #333;
+    overflow-x: hidden;
 }
 
 /* =============== */
@@ -22,12 +23,16 @@ body {
     margin: 40px auto;
 }
 
-/* STICKY LEFT & RIGHT COLUMNS */
+/* STICKY LEFT & RIGHT NAVIGATION */
 .left-menu,
 .right-nav {
     position: sticky;
-    top: 40px;
-    align-self: start;
+    top: 40px;              /* When scrolling, stick 40px below top */
+    height: fit-content;    /* Allows sticky behavior inside grid */
+    align-self: start;      /* Ensures correct grid behavior */
+    z-index: 99;
+    background: white;      /* Prevent text overlap during scroll */
+    padding-bottom: 20px;
 }
 
 /* LEFT MENU */
@@ -88,7 +93,7 @@ body {
     border: 1px solid #aaa;
 }
 
-/* TITLE under name matches degree size */
+/* TITLE under name = degree size */
 .title {
     font-size: 1.2rem;
     margin-top: 8px;
@@ -102,7 +107,7 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* EDUCATION GRID – 2×2 */
+/* EDUCATION GRID (2×2) */
 .education-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -139,7 +144,7 @@ h2 {
     margin-bottom: 6px;
 }
 
-/* WORK GRID – 3×2 */
+/* WORK GRID — 3×2 */
 .work-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -185,7 +190,6 @@ footer {
 /* ========================= */
 /* MOBILE */
 /* ========================= */
-
 @media (max-width: 900px) {
 
     .outer-container {
@@ -193,13 +197,14 @@ footer {
         margin: 20px;
     }
 
+    /* Left menu becomes simple top bar */
     .left-menu {
         width: 100%;
         text-align: center;
         padding-bottom: 20px;
         border-bottom: 1px solid #ddd;
         margin-bottom: 30px;
-        position: static;
+        position: static; /* disable sticky on mobile */
     }
 
     .left-menu p {
@@ -207,8 +212,9 @@ footer {
         margin: 0 15px;
     }
 
+    /* Right sidebar moves to bottom */
     .right-nav {
-        position: static;
+        position: static; /* disable sticky on mobile */
         margin-top: 40px;
         border-top: 1px solid #ddd;
         padding-top: 20px;
@@ -220,16 +226,9 @@ footer {
         margin: 0 10px;
     }
 
-    .education-grid {
-        grid-template-columns: 1fr;
-    }
-
+    /* Collapse grids */
+    .education-grid,
     .work-grid {
         grid-template-columns: 1fr;
     }
-
-    p, td, li {
-        font-size: 1.2rem;
-    }
 }
-
