@@ -10,14 +10,18 @@ body {
     color: #333;
 }
 
-/* MAIN TWO-COLUMN LAYOUT — THIS IS WHAT MAKES THE SIDEBAR SHOW */
+/* ------------------------------
+   DESKTOP LAYOUT
+------------------------------ */
+
+/* Main two-column layout */
 .container {
     display: flex;
     max-width: 1050px;
     margin: 40px auto;
 }
 
-/* LEFT NAV COLUMN */
+/* Left navigation column (desktop only) */
 .nav-column {
     width: 180px;
     padding-right: 25px;
@@ -37,13 +41,13 @@ body {
     text-decoration: underline;
 }
 
-/* RIGHT MAIN CONTENT COLUMN */
+/* Main content area */
 .content-column {
     flex-grow: 1;
     max-width: 750px;
 }
 
-/* HEADER TABLE */
+/* Header table */
 .header-table {
     width: 100%;
     margin-bottom: 40px;
@@ -62,7 +66,7 @@ body {
     border: 1px solid #aaa;
 }
 
-/* NAME + TITLE */
+/* Name + Title */
 .name {
     font-size: 2.4rem;
     margin-bottom: 5px;
@@ -78,7 +82,7 @@ body {
     line-height: 1.6;
 }
 
-/* SECTION HEADERS */
+/* Section headers */
 h2 {
     font-size: 2rem;
     border-bottom: 1px solid #ccc;
@@ -86,7 +90,7 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* EDUCATION & WORK TABLES */
+/* Info tables (Education/Work) */
 .info-table {
     width: 100%;
     border-collapse: collapse;
@@ -105,7 +109,7 @@ h2 {
     vertical-align: top;
 }
 
-/* CONTACT + FOOTER */
+/* Footer */
 p {
     font-size: 1.2rem;
 }
@@ -115,3 +119,37 @@ footer {
     font-size: 1rem;
     color: #777;
 }
+
+
+/* ------------------------------
+   MOBILE MENU (Hamburger)
+------------------------------ */
+
+/* Hidden by default on desktop */
+.mobile-menu-button {
+    display: none;
+}
+
+/* Slide-in menu (hidden by default) */
+.mobile-menu {
+    display: none; /* hidden on desktop */
+    position: fixed;
+    top: 0;
+    left: -100%; /* fully hidden offscreen */
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 40px 30px;
+    transition: left 0.3s ease;
+    z-index: 9999;
+}
+
+.mobile-menu a {
+    display: block;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #333;
+}
+
+.mobi
