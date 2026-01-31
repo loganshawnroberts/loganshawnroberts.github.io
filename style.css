@@ -32,7 +32,7 @@ body {
     position: fixed;
     top: 40px;
     right: 30px;
-    width: 160px;
+    width: 120px;   /* reduced from 160px */
     z-index: 999;
 }
 
@@ -73,6 +73,7 @@ body {
     height: 170px;
     border: 1px solid #aaa;
     object-fit: cover;
+    margin-top: 20px;   /* NEW: adds buffer above the headshot */
 }
 
 .title { font-size: 1.2rem; }
