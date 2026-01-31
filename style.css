@@ -1,4 +1,7 @@
-/* EB Garamond globally */
+/* ====================================== */
+/* GLOBAL TYPOGRAPHY AND BASE STYLES      */
+/* ====================================== */
+
 * {
     font-family: 'EB Garamond', serif !important;
 }
@@ -11,31 +14,19 @@ body {
     overflow-x: hidden;
 }
 
-/* =============== */
-/* DESKTOP LAYOUT  */
-/* =============== */
+/* ====================================== */
+/* FIXED LEFT MENU & FIXED RIGHT SIDEBAR  */
+/* ====================================== */
 
-.outer-container {
-    display: grid;
-    grid-template-columns: 180px auto 200px;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 40px auto;
+/* FIXED LEFT NAVIGATION */
+.left-menu {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    width: 140px;
+    z-index: 1000;
 }
 
-/* STICKY LEFT & RIGHT NAVIGATION */
-.left-menu,
-.right-nav {
-    position: sticky;
-    top: 40px;              /* When scrolling, stick 40px below top */
-    height: fit-content;    /* Allows sticky behavior inside grid */
-    align-self: start;      /* Ensures correct grid behavior */
-    z-index: 99;
-    background: white;      /* Prevent text overlap during scroll */
-    padding-bottom: 20px;
-}
-
-/* LEFT MENU */
 .left-menu p {
     margin: 0 0 14px 0;
 }
@@ -50,12 +41,15 @@ body {
     text-decoration: underline;
 }
 
-/* MAIN CONTENT */
-.main-content {
-    max-width: 700px;
+/* FIXED RIGHT SIDEBAR */
+.right-nav {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 160px;
+    z-index: 1000;
 }
 
-/* RIGHT SIDEBAR */
 .right-title {
     font-size: 1.4rem;
     font-weight: bold;
@@ -80,6 +74,16 @@ body {
     text-decoration: underline;
 }
 
+/* ====================================== */
+/* MAIN CONTENT (CENTER COLUMN)           */
+/* ====================================== */
+
+.main-content {
+    max-width: 700px;
+    margin-left: 200px;  /* leave room for fixed left menu */
+    margin-right: 240px; /* leave room for fixed right sidebar */
+}
+
 /* HEADER */
 .header-table {
     width: 100%;
@@ -91,9 +95,10 @@ body {
     height: 170px;
     object-fit: cover;
     border: 1px solid #aaa;
+    border-radius: 0;
 }
 
-/* TITLE under name = degree size */
+/* TITLE (same size as degree lines) */
 .title {
     font-size: 1.2rem;
     margin-top: 8px;
@@ -107,7 +112,10 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* EDUCATION GRID (2×2) */
+/* ====================================== */
+/* EDUCATION SECTION (2×2 GRID)           */
+/* ====================================== */
+
 .education-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -138,13 +146,17 @@ h2 {
     margin: 0 0 10px 0;
 }
 
+/* Slightly smaller bullet text */
 .edu-list li {
     font-size: 1.05rem;
     line-height: 1.5;
     margin-bottom: 6px;
 }
 
-/* WORK GRID — 3×2 */
+/* ====================================== */
+/* WORK SECTION (3×2 GRID, same style)    */
+/* ====================================== */
+
 .work-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -180,55 +192,39 @@ h2 {
     margin-bottom: 6px;
 }
 
-/* FOOTER */
-footer {
-    margin-top: 40px;
-    font-size: 1rem;
-    color: #777;
+/* ====================================== */
+/* CONTACT FORM                           */
+/* ====================================== */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
 }
 
-/* ========================= */
-/* MOBILE */
-/* ========================= */
-@media (max-width: 900px) {
+.contact-form label {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
 
-    .outer-container {
-        display: block;
-        margin: 20px;
-    }
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
 
-    /* Left menu becomes simple top bar */
-    .left-menu {
-        width: 100%;
-        text-align: center;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 30px;
-        position: static; /* disable sticky on mobile */
-    }
+.contact-form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
 
-    .left-menu p {
-        display: inline;
-        margin: 0 15px;
-    }
-
-    /* Right sidebar moves to bottom */
-    .right-nav {
-        position: static; /* disable sticky on mobile */
-        margin-top: 40px;
-        border-top: 1px solid #ddd;
-        padding-top: 20px;
-        text-align: center;
-    }
-
-    .right-nav li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    /* Collapse grids */
-    .education-grid,
-    .work-grid {
-        grid-template-columns: 1fr;
-    }
+.contact-form button:hover {
+    background-color: #555;
 }
