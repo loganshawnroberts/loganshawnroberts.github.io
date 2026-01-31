@@ -6,19 +6,23 @@
     <title>Logan Roberts</title>
 
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=41">
+    <link rel="stylesheet" href="style.css?v=50">
 </head>
 
 <body>
 
-<!-- LEFT MENU (fixed on desktop, top nav on mobile) -->
-<aside class="left-menu">
+<!-- ================================ -->
+<!-- FIXED LEFT MENU (desktop only)   -->
+<!-- ================================ -->
+<aside class="left-menu desktop-only">
     <p><a href="#home">Home</a></p>
     <p><a href="contact.html">Contact</a></p>
 </aside>
 
-<!-- RIGHT MENU (fixed desktop only) -->
-<aside class="right-nav">
+<!-- ================================ -->
+<!-- FIXED RIGHT MENU (desktop only)  -->
+<!-- ================================ -->
+<aside class="right-nav desktop-only">
     <div class="right-title">On this page</div>
     <ul>
         <li><a href="#home" class="spy">Home</a></li>
@@ -27,6 +31,23 @@
     </ul>
 </aside>
 
+<!-- ================================ -->
+<!-- HAMBURGER (mobile only)          -->
+<!-- ================================ -->
+<div class="hamburger mobile-only" onclick="openMenu()">☰</div>
+
+<!-- ================================ -->
+<!-- MOBILE SLIDE-IN MENU             -->
+<!-- ================================ -->
+<div id="mobileMenu" class="mobile-menu">
+    <div class="close-btn" onclick="closeMenu()">×</div>
+
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#education" onclick="closeMenu()">Education</a>
+    <a href="#work" onclick="closeMenu()">Work</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
 <!-- MAIN CONTENT -->
 <main class="main-content">
 
@@ -34,7 +55,7 @@
     <a id="home"></a>
     <table class="header-table">
         <tr>
-            <td><img src="images/me.jpg" class="profile"></td>
+            <td><img src="images/me.jpg" class="profile" alt="Profile photo"></td>
             <td class="intro-col">
                 <h1 class="name">Logan Roberts</h1>
                 <p class="title">Educator</p>
@@ -98,38 +119,50 @@
 
         <div class="work-item">
             <img src="images/SLS.png" class="work-logo">
-            <h3 class="work-title"><strong>SLS</strong></h3>
-            <p class="work-desc">Brief description of work performed at SLS.</p>
+            <div>
+                <h3 class="work-title"><strong>SLS</strong></h3>
+                <p class="work-desc">Brief description of work performed at SLS.</p>
+            </div>
         </div>
 
         <div class="work-item">
             <img src="images/choate.png" class="work-logo">
-            <h3 class="work-title"><strong>Choate</strong></h3>
-            <p class="work-desc">Brief description of work performed at Choate.</p>
+            <div>
+                <h3 class="work-title"><strong>Choate</strong></h3>
+                <p class="work-desc">Brief description of work performed at Choate.</p>
+            </div>
         </div>
 
         <div class="work-item">
             <img src="images/bcn.png" class="work-logo">
-            <h3 class="work-title"><strong>BCN</strong></h3>
-            <p class="work-desc">Brief description of work performed at BCN.</p>
+            <div>
+                <h3 class="work-title"><strong>BCN</strong></h3>
+                <p class="work-desc">Brief description of work performed at BCN.</p>
+            </div>
         </div>
 
         <div class="work-item">
             <img src="images/coe.png" class="work-logo">
-            <h3 class="work-title"><strong>COE</strong></h3>
-            <p class="work-desc">Brief description of work performed at COE.</p>
+            <div>
+                <h3 class="work-title"><strong>COE</strong></h3>
+                <p class="work-desc">Brief description of work performed at COE.</p>
+            </div>
         </div>
 
         <div class="work-item">
             <img src="images/edmobilizer.png" class="work-logo">
-            <h3 class="work-title"><strong>EdMobilizer</strong></h3>
-            <p class="work-desc">Brief description of work performed at EdMobilizer.</p>
+            <div>
+                <h3 class="work-title"><strong>EdMobilizer</strong></h3>
+                <p class="work-desc">Brief description of work performed at EdMobilizer.</p>
+            </div>
         </div>
 
         <div class="work-item">
             <img src="images/house.png" class="work-logo">
-            <h3 class="work-title"><strong>House</strong></h3>
-            <p class="work-desc">Brief description of work performed at House.</p>
+            <div>
+                <h3 class="work-title"><strong>House</strong></h3>
+                <p class="work-desc">Brief description of work performed at House.</p>
+            </div>
         </div>
 
     </div>
@@ -138,20 +171,34 @@
 
 </main>
 
-<!-- SCROLLSPY (desktop only) -->
-<script>
-const sections = document.querySelectorAll('a[id]');
-const links = document.querySelectorAll('.spy');
+<!-- ================================ -->
+<!-- JAVASCRIPT FOR MOBILE MENU + SPY -->
+<!-- ================================ -->
 
-function activateSpy() {
-    let index = sections.length;
-    while (--index && window.scrollY + 120 < sections[index].offsetTop) {}
-    links.forEach(link => link.classList.remove('active-spy'));
-    links[index].classList.add('active-spy');
+<script>
+function openMenu() {
+    document.getElementById("mobileMenu").style.right = "0";
 }
 
-activateSpy();
-window.addEventListener('scroll', activateSpy);
+function closeMenu() {
+    document.getElementById("mobileMenu").style.right = "-100%";
+}
+
+/* Scrollspy (desktop only) */
+if (window.innerWidth > 900) {
+    const sections = document.querySelectorAll('a[id]');
+    const links = document.querySelectorAll('.spy');
+
+    function activateSpy() {
+        let index = sections.length;
+        while (--index && window.scrollY + 120 < sections[index].offsetTop) {}
+        links.forEach(link => link.classList.remove('active-spy'));
+        links[index].classList.add('active-spy');
+    }
+
+    activateSpy();
+    window.addEventListener('scroll', activateSpy);
+}
 </script>
 
 </body>
