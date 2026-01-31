@@ -207,18 +207,99 @@ footer {
 
 @media (max-width: 900px) {
 
+    /* REMOVE fixed behavior on mobile */
     .left-menu,
     .right-nav {
         position: static;
         width: 100%;
         text-align: center;
-        margin-bottom: 35px;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* LEFT MENU AS SIMPLE TOP NAV */
+    .left-menu {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+        margin-bottom: 25px;
     }
 
     .left-menu p {
-        display: inline;
+        display: inline-block;
+        margin: 0 15px;
+    }
+
+    /* MOVE ON-THIS-PAGE MENU BELOW HEADER */
+    .right-nav {
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+        margin-top: 25px;
+    }
+
+    .right-nav li {
+        display: inline-block;
         margin: 0 12px;
     }
 
+    /* MAIN CONTENT FULL WIDTH */
     .main-content {
-        margin-le
+        max-width: 95%;           /* nearly full width */
+        margin: 0 auto !important;
+        padding: 0 10px;
+    }
+
+    /* HEADER CENTER REALIGNMENT */
+    .header-table {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 15px;
+    }
+
+    .intro-col {
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    /* EDUCATION & WORK GO TO SINGLE COLUMN */
+    .education-grid,
+    .work-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* WORK ITEM CLEAN STACK */
+    .work-item {
+        grid-template-columns: 50px auto;
+        gap: 12px;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+
+    .work-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    h2 {
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    /* TEXT READABILITY */
+    p, li {
+        font-size: 1.15rem;
+        line-height: 1.55;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-bottom: 30px;
+    }
+}
+
