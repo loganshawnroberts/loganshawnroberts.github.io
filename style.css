@@ -76,14 +76,10 @@ body {
     text-decoration: underline;
 }
 
-/* HEADER TABLE */
+/* HEADER */
 .header-table {
     width: 100%;
     margin-bottom: 40px;
-}
-
-.photo-col {
-    width: 200px;
 }
 
 .profile {
@@ -91,7 +87,12 @@ body {
     height: 170px;
     object-fit: cover;
     border: 1px solid #aaa;
-    border-radius: 0; /* square image */
+}
+
+/* TITLE under your name now matches degree size */
+.title {
+    font-size: 1.2rem;
+    margin-top: 8px;
 }
 
 /* SECTION HEADERS */
@@ -102,15 +103,65 @@ h2 {
     padding-bottom: 5px;
 }
 
-.label {
-    width: 30%;
-    font-weight: bold;
-    vertical-align: top;
-    padding-right: 20px;
+/* EDUCATION – 2×2 GRID */
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 25px;
 }
 
-.info-table td {
-    padding-bottom: 15px;
+.edu-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-crest {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.edu-school {
+    font-size: 1.4rem;
+    font-variant-caps: small-caps;
+    margin: 0 0 5px 0;
+}
+
+.edu-degree {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+}
+
+.edu-list li {
+    font-size: 1.05rem; /* slightly smaller than degree */
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+/* WORK GRID – same layout */
+.work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 25px;
+}
+
+.work-title {
+    font-size: 1.4rem;
+    font-variant-caps: small-caps;
+    margin-bottom: 5px;
+}
+
+.work-org {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.work-list li {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
 }
 
 /* CONTACT FORM */
@@ -155,18 +206,16 @@ footer {
 }
 
 /* ========================= */
-/*      MOBILE & TABLET      */
+/* MOBILE & TABLET           */
 /* ========================= */
 
 @media (max-width: 900px) {
 
-    /* Collapse 3-column layout */
     .outer-container {
         display: block;
         margin: 20px;
     }
 
-    /* LEFT MENU becomes a simple top bar */
     .left-menu {
         width: 100%;
         text-align: center;
@@ -180,7 +229,6 @@ footer {
         margin: 0 15px;
     }
 
-    /* Center profile photo */
     .header-table {
         text-align: center;
     }
@@ -193,7 +241,11 @@ footer {
         text-align: center;
     }
 
-    /* Move right sidebar to bottom */
+    .education-grid,
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
     .right-nav {
         margin-top: 40px;
         border-top: 1px solid #ddd;
@@ -208,59 +260,5 @@ footer {
 
     p, td, li {
         font-size: 1.2rem;
-    }
-}
-
-/* EDUCATION GRID — always 2×2 on desktop */
-.education-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;  /* <-- THIS forces horizontal layout */
-    gap: 40px;
-    margin-top: 25px;
-}
-
-/* Each school block */
-.edu-item {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Small, uniform crest images */
-.edu-crest {
-    width: 50px;       /* smaller, cleaner */
-    height: 50px;      /* uniform size */
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-/* School name */
-.edu-school {
-    font-size: 1.4rem;
-    font-variant-caps: small-caps;
-    margin: 0 0 5px 0;
-}
-
-/* Degree */
-.edu-degree {
-    font-size: 1.2rem;
-    margin: 0 0 10px 0;
-}
-
-/* Bullet list */
-.edu-list {
-    padding-left: 20px;
-    margin-top: 0;
-}
-
-.edu-list li {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-bottom: 6px;
-}
-
-/* MOBILE RESPONSIVE — stack vertically */
-@media (max-width: 900px) {
-    .education-grid {
-        grid-template-columns: 1fr;  /* 1 column on mobile */
     }
 }
