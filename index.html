@@ -6,18 +6,18 @@
     <title>Logan Roberts</title>
 
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=40">
+    <link rel="stylesheet" href="style.css?v=41">
 </head>
 
 <body>
 
-<!-- FIXED LEFT NAV -->
+<!-- LEFT MENU (fixed on desktop, top nav on mobile) -->
 <aside class="left-menu">
     <p><a href="#home">Home</a></p>
     <p><a href="contact.html">Contact</a></p>
 </aside>
 
-<!-- FIXED RIGHT NAV -->
+<!-- RIGHT MENU (fixed desktop only) -->
 <aside class="right-nav">
     <div class="right-title">On this page</div>
     <ul>
@@ -34,9 +34,7 @@
     <a id="home"></a>
     <table class="header-table">
         <tr>
-            <td class="photo-col">
-                <img src="images/me.jpg" class="profile">
-            </td>
+            <td><img src="images/me.jpg" class="profile"></td>
             <td class="intro-col">
                 <h1 class="name">Logan Roberts</h1>
                 <p class="title">Educator</p>
@@ -49,6 +47,7 @@
     <h2>Education</h2>
 
     <div class="education-grid">
+
         <div class="edu-item">
             <img src="images/upenn.png" class="edu-crest">
             <h3 class="edu-school"><strong>University of Pennsylvania</strong></h3>
@@ -88,6 +87,7 @@
                 <li>Praesent commodo cursus magna.</li>
             </ul>
         </div>
+
     </div>
 
     <!-- WORK -->
@@ -138,7 +138,7 @@
 
 </main>
 
-<!-- SCROLLSPY -->
+<!-- SCROLLSPY (desktop only) -->
 <script>
 const sections = document.querySelectorAll('a[id]');
 const links = document.querySelectorAll('.spy');
