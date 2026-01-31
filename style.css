@@ -210,3 +210,57 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+/* EDUCATION GRID — always 2×2 on desktop */
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* <-- THIS forces horizontal layout */
+    gap: 40px;
+    margin-top: 25px;
+}
+
+/* Each school block */
+.edu-item {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Small, uniform crest images */
+.edu-crest {
+    width: 50px;       /* smaller, cleaner */
+    height: 50px;      /* uniform size */
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* School name */
+.edu-school {
+    font-size: 1.4rem;
+    font-variant-caps: small-caps;
+    margin: 0 0 5px 0;
+}
+
+/* Degree */
+.edu-degree {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+}
+
+/* Bullet list */
+.edu-list {
+    padding-left: 20px;
+    margin-top: 0;
+}
+
+.edu-list li {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+/* MOBILE RESPONSIVE — stack vertically */
+@media (max-width: 900px) {
+    .education-grid {
+        grid-template-columns: 1fr;  /* 1 column on mobile */
+    }
+}
