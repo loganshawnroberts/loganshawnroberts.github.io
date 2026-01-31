@@ -10,37 +10,70 @@ body {
     color: #333;
 }
 
-/* MAIN TWO-COLUMN LAYOUT */
-.container {
-    display: flex;
-    max-width: 1050px;
+/* =============== */
+/* DESKTOP LAYOUT  */
+/* =============== */
+
+.outer-container {
+    display: grid;
+    grid-template-columns: 180px auto 200px;
+    gap: 30px;
+    max-width: 1200px;
     margin: 40px auto;
 }
 
-/* LEFT NAV COLUMN */
-.nav-column {
-    width: 180px;
-    padding-right: 25px;
+/* LEFT MENU */
+.left-menu {
+    padding-top: 10px;
 }
 
-.nav-column p {
+.left-menu p {
     margin: 0 0 14px 0;
 }
 
-.nav-column a {
+.left-menu a {
     text-decoration: none;
-    color: #333;
     font-size: 1.3rem;
+    color: #333;
 }
 
-.nav-column a:hover {
+.left-menu a:hover {
     text-decoration: underline;
 }
 
-/* RIGHT MAIN CONTENT COLUMN */
-.content-column {
-    flex-grow: 1;
-    max-width: 750px;
+/* MAIN CONTENT */
+.main-content {
+    max-width: 700px;
+}
+
+/* RIGHT SIDEBAR */
+.right-nav {
+    padding-top: 10px;
+    font-size: 1.1rem;
+}
+
+.right-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.right-nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.right-nav li {
+    margin-bottom: 10px;
+}
+
+.right-nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.right-nav a:hover {
+    text-decoration: underline;
 }
 
 /* HEADER TABLE */
@@ -51,62 +84,129 @@ body {
 
 .photo-col {
     width: 200px;
-    vertical-align: top;
 }
 
 .profile {
     width: 170px;
     height: 170px;
-    border-radius: 50%;
     object-fit: cover;
     border: 1px solid #aaa;
-}
-
-/* NAME + TITLE */
-.name {
-    font-size: 2.4rem;
-    margin-bottom: 5px;
-}
-
-.title {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
+    border-radius: 0; /* square image */
 }
 
 /* SECTION HEADERS */
 h2 {
     font-size: 2rem;
     border-bottom: 1px solid #ccc;
-    margin-top: 50px;
+    margin-top: 40px;
     padding-bottom: 5px;
-}
-
-/* EDUCATION & WORK TABLES */
-.info-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
 }
 
 .label {
     width: 30%;
-    font-weight: 600;
+    font-weight: bold;
     vertical-align: top;
     padding-right: 20px;
 }
 
 .info-table td {
     padding-bottom: 15px;
-    vertical-align: top;
 }
 
-/* CONTACT + FOOTER */
-p {
+/* CONTACT FORM */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.contact-form label {
+    margin-top: 15px;
     font-size: 1.2rem;
 }
 
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* FOOTER */
 footer {
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 1rem;
     color: #777;
+}
+
+/* ========================= */
+/*      MOBILE & TABLET      */
+/* ========================= */
+
+@media (max-width: 900px) {
+
+    /* Collapse 3-column layout */
+    .outer-container {
+        display: block;
+        margin: 20px;
+    }
+
+    /* LEFT MENU becomes a simple top bar */
+    .left-menu {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 30px;
+    }
+
+    .left-menu p {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    /* Center profile photo */
+    .header-table {
+        text-align: center;
+    }
+
+    .profile {
+        margin: 0 auto 20px auto;
+    }
+
+    .intro-col {
+        text-align: center;
+    }
+
+    /* Move right sidebar to bottom */
+    .right-nav {
+        margin-top: 40px;
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .right-nav li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    p, td, li {
+        font-size: 1.2rem;
+    }
 }
