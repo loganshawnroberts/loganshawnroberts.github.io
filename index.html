@@ -5,175 +5,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logan Roberts</title>
 
-    <!-- EB Garamond -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=25">
+    <link rel="stylesheet" href="style.css?v=40">
 </head>
 
 <body>
 
-<div class="outer-container">
+<!-- FIXED LEFT MENU -->
+<aside class="left-menu">
+    <p><a href="#home">Home</a></p>
+    <p><a href="contact.html">Contact</a></p>
+</aside>
 
-    <!-- LEFT MENU (STICKY) -->
-    <aside class="left-menu">
-        <p><a href="index.html">Home</a></p>
-        <p><a href="contact.html">Contact</a></p>
-    </aside>
+<!-- FIXED RIGHT SIDEBAR -->
+<aside class="right-nav">
+    <div class="right-title">On this page</div>
+    <ul>
+        <li><a href="#home" class="spy">Home</a></li>
+        <li><a href="#education" class="spy">Education</a></li>
+        <li><a href="#work" class="spy">Work</a></li>
+    </ul>
+</aside>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
+<!-- MAIN SCROLLING CONTENT -->
+<main class="main-content">
 
-        <!-- HEADER -->
-        <a id="home"></a>
-        <table class="header-table">
-            <tr>
-                <td class="photo-col">
-                    <img src="images/me.jpg" class="profile" alt="Profile photo">
-                </td>
-                <td class="intro-col">
-                    <h1 class="name">Logan Roberts</h1>
-                    <p class="title">Educator</p>
-                </td>
-            </tr>
-        </table>
+    <!-- HEADER -->
+    <a id="home"></a>
+    <table class="header-table">
+        <tr>
+            <td class="photo-col">
+                <img src="images/me.jpg" class="profile" alt="Profile photo">
+            </td>
+            <td class="intro-col">
+                <h1 class="name">Logan Roberts</h1>
+                <p class="title">Educator</p>
+            </td>
+        </tr>
+    </table>
 
-        <!-- EDUCATION -->
-        <a id="education"></a>
-        <h2>Education</h2>
+    <!-- EDUCATION -->
+    <a id="education"></a>
+    <h2>Education</h2>
 
-        <div class="education-grid">
+    <div class="education-grid">
 
-            <!-- UPENN -->
-            <div class="edu-item">
-                <img src="images/upenn.png" class="edu-crest" alt="UPenn Crest">
-                <h3 class="edu-school"><strong>University of Pennsylvania</strong></h3>
-                <p class="edu-degree">Degree Title (Years)</p>
-                <ul class="edu-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Curabitur blandit tempus porttitor.</li>
-                </ul>
-            </div>
-
-            <!-- YALE -->
-            <div class="edu-item">
-                <img src="images/yale.svg" class="edu-crest" alt="Yale Crest">
-                <h3 class="edu-school"><strong>Yale University</strong></h3>
-                <p class="edu-degree">Degree Title (Years)</p>
-                <ul class="edu-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Consectetur adipiscing elit.</li>
-                </ul>
-            </div>
-
-            <!-- TC3 -->
-            <div class="edu-item">
-                <img src="images/tc3.jpg" class="edu-crest" alt="TC3 Crest">
-                <h3 class="edu-school"><strong>Tompkins Cortland CC</strong></h3>
-                <p class="edu-degree">Degree Title (Years)</p>
-                <ul class="edu-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Mauris euismod magna vel massa.</li>
-                </ul>
-            </div>
-
-            <!-- CORNELL -->
-            <div class="edu-item">
-                <img src="images/cornell.png" class="edu-crest" alt="Cornell Crest">
-                <h3 class="edu-school"><strong>Cornell University</strong></h3>
-                <p class="edu-degree">Degree Title (Years)</p>
-                <ul class="edu-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Praesent commodo cursus magna.</li>
-                </ul>
-            </div>
-
+        <div class="edu-item">
+            <img src="images/upenn.png" class="edu-crest">
+            <h3 class="edu-school"><strong>University of Pennsylvania</strong></h3>
+            <p class="edu-degree">Degree Title</p>
+            <ul class="edu-list">
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Curabitur blandit tempus porttitor.</li>
+            </ul>
         </div>
 
-        <!-- WORK -->
-        <a id="work"></a>
-        <h2>Work</h2>
-
-        <div class="work-grid">
-
-            <div class="work-item">
-                <img src="images/SLS.png" class="work-logo" alt="SLS Logo">
-                <h3 class="work-title"><strong>Job Title One</strong></h3>
-                <p class="work-org">School / Organization (Years)</p>
-                <ul class="work-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Curabitur blandit tempus porttitor.</li>
-                </ul>
-            </div>
-
-            <div class="work-item">
-                <img src="images/choate.png" class="work-logo" alt="Choate Logo">
-                <h3 class="work-title"><strong>Job Title Two</strong></h3>
-                <p class="work-org">School / Organization (Years)</p>
-                <ul class="work-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Integer posuere erat a ante venenatis.</li>
-                </ul>
-            </div>
-
-            <div class="work-item">
-                <img src="images/bcn.png" class="work-logo" alt="BCN Logo">
-                <h3 class="work-title"><strong>Job Title Three</strong></h3>
-                <p class="work-org">Organization (Years)</p>
-                <ul class="work-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Vestibulum id ligula porta felis.</li>
-                </ul>
-            </div>
-
-            <div class="work-item">
-                <img src="images/coe.png" class="work-logo" alt="COE Logo">
-                <h3 class="work-title"><strong>Job Title Four</strong></h3>
-                <p class="work-org">Organization (Years)</p>
-                <ul class="work-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Praesent commodo cursus magna.</li>
-                </ul>
-            </div>
-
-            <div class="work-item">
-                <img src="images/edmobilizer.png" class="work-logo" alt="EdMobilizer Logo">
-                <h3 class="work-title"><strong>Job Title Five</strong></h3>
-                <p class="work-org">Organization (Years)</p>
-                <ul class="work-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Duis mollis est non commodo luctus.</li>
-                </ul>
-            </div>
-
-            <div class="work-item">
-                <img src="images/house.png" class="work-logo" alt="House Logo">
-                <h3 class="work-title"><strong>Job Title Six</strong></h3>
-                <p class="work-org">Organization (Years)</p>
-                <ul class="work-list">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Maecenas faucibus mollis interdum.</li>
-                </ul>
-            </div>
-
+        <div class="edu-item">
+            <img src="images/yale.svg" class="edu-crest">
+            <h3 class="edu-school"><strong>Yale University</strong></h3>
+            <p class="edu-degree">Degree Title</p>
+            <ul class="edu-list">
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Consectetur adipiscing elit.</li>
+            </ul>
         </div>
 
-        <footer>
-            © 2026 Logan Roberts
-        </footer>
+        <div class="edu-item">
+            <img src="images/tc3.jpg" class="edu-crest">
+            <h3 class="edu-school"><strong>Tompkins Cortland CC</strong></h3>
+            <p class="edu-degree">Degree Title</p>
+            <ul class="edu-list">
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Mauris euismod magna vel massa.</li>
+            </ul>
+        </div>
 
-    </main>
+        <div class="edu-item">
+            <img src="images/cornell.png" class="edu-crest">
+            <h3 class="edu-school"><strong>Cornell University</strong></h3>
+            <p class="edu-degree">Degree Title</p>
+            <ul class="edu-list">
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Praesent commodo cursus magna.</li>
+            </ul>
+        </div>
 
-    <!-- RIGHT SIDEBAR (STICKY) -->
-    <aside class="right-nav">
-        <div class="right-title">On this page</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#work">Work</a></li>
-        </ul>
-    </aside>
+    </div>
 
-</div>
+    <!-- WORK -->
+    <a id="work"></a>
+    <h2>Work</h2>
+
+    <div class="work-grid">
+
+        <div class="work-item">
+            <img src="images/SLS.png" class="work-logo">
+            <h3 class="work-title"><strong>SLS</strong></h3>
+            <p class="work-desc">Brief description of work done at SLS.</p>
+        </div>
+
+        <div class="work-item">
+            <img src="images/choate.png" class="work-logo">
+            <h3 class="work-title"><strong>Choate</strong></h3>
+            <p class="work-desc">Brief description of work done at Choate.</p>
+        </div>
+
+        <div class="work-item">
+            <img src="images/bcn.png" class="work-logo">
+            <h3 class="work-title"><strong>BCN</strong></h3>
+            <p class="work-desc">Brief description of work done at BCN.</p>
+        </div>
+
+        <div class="work-item">
+            <img src="images/coe.png" class="work-logo">
+            <h3 class="work-title"><strong>COE</strong></h3>
+            <p class="work-desc">Brief description of work done at COE.</p>
+        </div>
+
+        <div class="work-item">
+            <img src="images/edmobilizer.png" class="work-logo">
+            <h3 class="work-title"><strong>EdMobilizer</strong></h3>
+            <p class="work-desc">Brief description of work done at EdMobilizer.</p>
+        </div>
+
+        <div class="work-item">
+            <img src="images/house.png" class="work-logo">
+            <h3 class="work-title"><strong>House</strong></h3>
+            <p class="work-desc">Brief description of work done at House.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 Logan Roberts
+    </footer>
+
+</main>
+
+<!-- SCROLLSPY SCRIPT -->
+<script>
+const sections = document.querySelectorAll('a[id]');
+const links = document.querySelectorAll('.spy');
+
+function activateSpy() {
+    let index = sections.length;
+
+    while(--index && window.scrollY + 120 < sections[index].offsetTop) {}
+
+    links.forEach((link) => link.classList.remove('active-spy'));
+    links[index].classList.add('active-spy');
+}
+
+activateSpy();
+window.addEventListener('scroll', activateSpy);
+</script>
 
 </body>
 </html>
