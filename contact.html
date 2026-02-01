@@ -6,58 +6,80 @@
     <title>Contact – Logan Roberts</title>
 
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=21">
+    <link rel="stylesheet" href="style.css?v=101">
 </head>
 
 <body>
 
-<div class="outer-container">
+<!-- LEFT SIDEBAR (desktop only) -->
+<aside class="left-menu desktop-only">
+    <p><a href="index.html">Home</a></p>
+    <p><a href="contact.html">Contact</a></p>
+</aside>
 
-    <!-- LEFT MENU -->
-    <aside class="left-menu">
-        <p><a href="index.html">Home</a></p>
-        <p><a href="contact.html">Contact</a></p>
-    </aside>
+<!-- RIGHT SIDEBAR (desktop only) -->
+<aside class="right-nav desktop-only">
+    <div class="right-title">Navigation</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</aside>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
+<!-- MOBILE HAMBURGER -->
+<div class="hamburger mobile-only" onclick="openMenu()">☰</div>
 
-        <h1>Contact Me</h1>
-        <p>If you'd like to get in touch, please fill out the form below.</p>
-
-        <form action="https://formsubmit.co/loganshawnroberts@gmail.com" method="POST" class="contact-form">
-
-            <!-- FormSubmit settings -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="New message from your website">
-            <input type="hidden" name="_next" value="https://loganshawnroberts.com/contact.html?sent=true">
-
-            <label>Your Name</label>
-            <input type="text" name="name" required>
-
-            <label>Your Email</label>
-            <input type="email" name="email" required>
-
-            <label>Subject</label>
-            <input type="text" name="subject" required>
-
-            <label>Message</label>
-            <textarea name="message" rows="6" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-
-        <footer>
-            © 2026 Logan Roberts
-        </footer>
-
-    </main>
-
-    <!-- Empty right column for layout symmetry -->
-    <aside class="right-nav"></aside>
-
+<!-- MOBILE SLIDE-IN MENU -->
+<div id="mobileMenu" class="mobile-menu mobile-only">
+    <div class="close-btn mobile-only" onclick="closeMenu()">×</div>
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
 </div>
+
+<!-- MAIN CONTENT -->
+<main class="main-content contact-content">
+
+    <h1 class="contact-header">Contact Me</h1>
+
+    <p class="contact-intro">
+        I welcome inquiries, collaborations, and professional correspondence.  
+        Please feel free to reach out using the form below.
+    </p>
+
+    <form action="https://formsubmit.co/loganshawnroberts@gmail.com" method="POST" class="contact-form">
+
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New message from your website">
+        <input type="hidden" name="_next" value="https://loganshawnroberts.com/contact.html?sent=true">
+
+        <label>Your Name</label>
+        <input type="text" name="name" required>
+
+        <label>Your Email</label>
+        <input type="email" name="email" required>
+
+        <label>Subject</label>
+        <input type="text" name="subject" required>
+
+        <label>Message</label>
+        <textarea name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <footer>© 2026 Logan Roberts</footer>
+
+</main>
+
+<script>
+function openMenu() {
+    document.getElementById("mobileMenu").style.right = "0";
+}
+function closeMenu() {
+    document.getElementById("mobileMenu").style.right = "-100%";
+}
+</script>
 
 </body>
 </html>
-
