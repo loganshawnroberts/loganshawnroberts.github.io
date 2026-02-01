@@ -1,5 +1,10 @@
-/* GLOBAL */
-* { font-family: 'EB Garamond', serif !important; }
+/* ====================================== */
+/* GLOBAL BASE STYLING                    */
+/* ====================================== */
+
+* {
+    font-family: 'EB Garamond', serif !important;
+}
 
 body {
     margin: 0;
@@ -8,63 +13,74 @@ body {
     overflow-x: hidden;
 }
 
-/* Helpers */
 .desktop-only { display: block; }
 .mobile-only { display: none; }
 
 /* ====================================== */
-/* FIXED LEFT NAV                         */
+/* LEFT SIDEBAR (DESKTOP ONLY)            */
 /* ====================================== */
 
 .left-menu {
     position: fixed;
     top: 60px;
-    left: 40px;
+    left: 30px;
     width: 130px;
-    line-height: 1.6;
     z-index: 999;
+    line-height: 1.6;
 }
 
 .left-menu p { margin-bottom: 12px; }
 
 .left-menu a {
-    text-decoration: none;
     font-size: 1.25rem;
     color: #333;
+    text-decoration: none;
 }
 
-.left-menu a:hover { text-decoration: underline; }
+.left-menu a:hover {
+    text-decoration: underline;
+}
 
 /* ====================================== */
-/* FIXED RIGHT SIDEBAR (LEFT-ALIGNED TEXT)*/
+/* RIGHT SIDEBAR (DESKTOP ONLY)           */
 /* ====================================== */
 
 .right-nav {
     position: fixed;
     top: 60px;
-    right: 20px;
+    right: 140px;          /* MOVED INWARD to hug central column */
     width: 140px;
-    text-align: left;      /* NEW — left aligned */
-    line-height: 1.6;
     z-index: 999;
-}
-
-.right-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.right-nav li {
-    margin: 0 0 8px 0;
-    padding: 0;
+    text-align: left;      /* TEXT LEFT-ALIGNED */
+    line-height: 1.6;
 }
 
 .right-title {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 8px;
-    letter-spacing: 0.03em;
+}
+
+/* REMOVE BULLET POINTS COMPLETELY */
+.right-nav ul {
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.right-nav li {
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+/* make links clean and flush */
+.right-nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.right-nav a:hover {
+    text-decoration: underline;
 }
 
 .active-spy {
@@ -73,19 +89,15 @@ body {
 }
 
 /* ====================================== */
-/* MAIN CONTENT AREA                      */
+/* MAIN CONTENT COLUMN                    */
 /* ====================================== */
 
 .main-content {
     max-width: 950px;
     margin-left: 220px;
-    margin-right: 160px;
+    margin-right: 200px;  /* updated to match new right-sidebar position */
     padding-bottom: 100px;
 }
-
-/* ====================================== */
-/* HEADER — larger name & title           */
-/* ====================================== */
 
 .header-table {
     width: 100%;
@@ -101,62 +113,68 @@ body {
 }
 
 .name {
-    font-size: 3.2rem;      /* MUCH larger */
+    font-size: 3.2rem;
     line-height: 1.1;
 }
 
 .title {
-    font-size: 1.3rem;      /* Slightly larger bio */
-    line-height: 1.3;
+    font-size: 1.3rem;
     margin-top: 6px;
 }
 
-/* SECTION HEADERS */
+/* ====================================== */
+/* SECTION HEADERS                        */
+/* ====================================== */
+
 h2 {
     font-size: 2rem;
+    padding-bottom: 6px;
     border-bottom: 1px solid #ccc;
     margin-top: 50px;
-    padding-bottom: 6px;
 }
 
 /* ====================================== */
-/* EDUCATION GRID (desktop)               */
+/* EDUCATION (2×2 desktop)                */
 /* ====================================== */
 
 .education-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 35px;               /* slightly tighter */
+    gap: 35px;
+    margin-top: 30px;
 }
 
-.edu-item { display: flex; flex-direction: column; }
+.edu-item {
+    display: flex;
+    flex-direction: column;
+}
 
 .edu-crest {
     width: 60px;
     height: 60px;
-    margin-bottom: 6px;       /* reduced spacing */
     object-fit: contain;
+    margin-bottom: 6px;     /* tightened */
 }
 
 .edu-school {
-    margin: 0;                /* tighter */
     font-size: 1.4rem;
     font-variant-caps: small-caps;
+    margin: 0;
 }
 
 .edu-degree {
-    margin: 4px 0 6px 0;      /* very tight vertical rhythm */
     font-size: 1.2rem;
+    margin: 4px 0 6px 0;    /* tightened */
 }
 
 .edu-list li {
     font-size: 1.05rem;
     line-height: 1.45;
-    margin-bottom: 4px;       /* slightly reduced */
+    margin-bottom: 4px;
 }
 
 /* ====================================== */
-/* WORK GRID (desktop, 2 columns)         */
+/* WORK (two-column, Ryan-style rows)     */
 /* ====================================== */
 
 .work-grid {
@@ -168,8 +186,7 @@ h2 {
 .work-item {
     display: grid;
     grid-template-columns: 55px auto;
-    gap: 10px;                /* tighter spacing */
-    align-items: start;
+    gap: 10px;
 }
 
 .work-logo {
@@ -179,7 +196,7 @@ h2 {
 }
 
 .work-title {
-    margin: 0;                /* no excess margin */
+    margin: 0;
     font-size: 1.35rem;
     font-variant-caps: small-caps;
 }
@@ -191,7 +208,7 @@ h2 {
 }
 
 /* ====================================== */
-/* MOBILE LAYOUT                          */
+/* MOBILE OVERRIDES                       */
 /* ====================================== */
 
 @media (max-width: 900px) {
@@ -199,6 +216,7 @@ h2 {
     .desktop-only { display: none; }
     .mobile-only { display: block; }
 
+    /* Hamburger */
     .hamburger {
         display: block;
         position: fixed;
@@ -208,20 +226,21 @@ h2 {
         z-index: 2000;
     }
 
+    /* Slide-in mobile menu */
     .mobile-menu {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 75%;
         height: 100%;
         background: #fff;
         box-shadow: -3px 0 12px rgba(0,0,0,0.2);
         padding: 40px 25px;
+        z-index: 3000;
         display: flex;
         flex-direction: column;
         gap: 30px;
         transition: right 0.3s ease;
-        z-index: 3000;
     }
 
     .close-btn {
@@ -232,14 +251,16 @@ h2 {
 
     .mobile-menu a {
         font-size: 1.5rem;
-        color: #333;
         text-decoration: none;
+        color: #333;
     }
 
+    /* Mobile content full-width */
     .main-content {
-        margin: 0 auto;
-        padding: 0 15px;
+        margin-left: 0;
+        margin-right: 0;
         max-width: 95%;
+        padding: 0 15px;
     }
 
     .header-table { text-align: center; }
@@ -252,6 +273,7 @@ h2 {
 
     .intro-col { text-align: center; }
 
+    /* Education & Work go vertical */
     .education-grid,
     .work-grid {
         grid-template-columns: 1fr;
@@ -263,10 +285,10 @@ h2 {
         gap: 10px;
     }
 
+    /* Mobile typography tuning */
     h2 {
         font-size: 1.7rem;
         text-align: center;
-        margin-top: 35px;
     }
 
     p, li {
