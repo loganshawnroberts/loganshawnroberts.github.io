@@ -6,22 +6,18 @@
     <title>Logan Roberts</title>
 
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=50">
+    <link rel="stylesheet" href="style.css?v=60">
 </head>
 
 <body>
 
-<!-- ================================ -->
-<!-- FIXED LEFT MENU (desktop only)   -->
-<!-- ================================ -->
+<!-- DESKTOP LEFT MENU -->
 <aside class="left-menu desktop-only">
     <p><a href="#home">Home</a></p>
     <p><a href="contact.html">Contact</a></p>
 </aside>
 
-<!-- ================================ -->
-<!-- FIXED RIGHT MENU (desktop only)  -->
-<!-- ================================ -->
+<!-- DESKTOP RIGHT MENU -->
 <aside class="right-nav desktop-only">
     <div class="right-title">On this page</div>
     <ul>
@@ -31,14 +27,10 @@
     </ul>
 </aside>
 
-<!-- ================================ -->
-<!-- HAMBURGER (mobile only)          -->
-<!-- ================================ -->
+<!-- HAMBURGER (mobile only) -->
 <div class="hamburger mobile-only" onclick="openMenu()">☰</div>
 
-<!-- ================================ -->
-<!-- MOBILE SLIDE-IN MENU             -->
-<!-- ================================ -->
+<!-- MOBILE SLIDE-IN MENU -->
 <div id="mobileMenu" class="mobile-menu">
     <div class="close-btn" onclick="closeMenu()">×</div>
 
@@ -55,7 +47,7 @@
     <a id="home"></a>
     <table class="header-table">
         <tr>
-            <td><img src="images/me.jpg" class="profile" alt="Profile photo"></td>
+            <td><img src="images/me.jpg" class="profile"></td>
             <td class="intro-col">
                 <h1 class="name">Logan Roberts</h1>
                 <p class="title">Educator</p>
@@ -171,10 +163,7 @@
 
 </main>
 
-<!-- ================================ -->
-<!-- JAVASCRIPT FOR MOBILE MENU + SPY -->
-<!-- ================================ -->
-
+<!-- JS -->
 <script>
 function openMenu() {
     document.getElementById("mobileMenu").style.right = "0";
@@ -184,7 +173,7 @@ function closeMenu() {
     document.getElementById("mobileMenu").style.right = "-100%";
 }
 
-/* Scrollspy (desktop only) */
+/* Scrollspy, desktop only */
 if (window.innerWidth > 900) {
     const sections = document.querySelectorAll('a[id]');
     const links = document.querySelectorAll('.spy');
