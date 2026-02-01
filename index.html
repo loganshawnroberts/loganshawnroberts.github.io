@@ -6,18 +6,22 @@
     <title>Logan Roberts</title>
 
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=61">
+    <link rel="stylesheet" href="style.css?v=100">
 </head>
 
 <body>
 
-<!-- DESKTOP LEFT MENU -->
+<!-- =============================== -->
+<!-- DESKTOP LEFT MENU               -->
+<!-- =============================== -->
 <aside class="left-menu desktop-only">
     <p><a href="#home">Home</a></p>
     <p><a href="contact.html">Contact</a></p>
 </aside>
 
-<!-- DESKTOP RIGHT SIDENAV -->
+<!-- =============================== -->
+<!-- DESKTOP RIGHT SIDEBAR           -->
+<!-- =============================== -->
 <aside class="right-nav desktop-only">
     <div class="right-title">On this page</div>
     <ul>
@@ -27,28 +31,33 @@
     </ul>
 </aside>
 
-<!-- MOBILE HAMBURGER -->
+<!-- =============================== -->
+<!-- MOBILE HAMBURGER ONLY ON MOBILE -->
+<!-- =============================== -->
 <div class="hamburger mobile-only" onclick="openMenu()">☰</div>
 
-<!-- MOBILE SLIDE-IN MENU -->
-<div id="mobileMenu" class="mobile-menu">
-    <div class="close-btn" onclick="closeMenu()">×</div>
+<!-- =============================== -->
+<!-- MOBILE SLIDE-IN MENU            -->
+<!-- =============================== -->
+<div id="mobileMenu" class="mobile-menu mobile-only">
+    <div class="close-btn mobile-only" onclick="closeMenu()">×</div>
+
     <a href="#home" onclick="closeMenu()">Home</a>
     <a href="#education" onclick="closeMenu()">Education</a>
     <a href="#work" onclick="closeMenu()">Work</a>
     <a href="contact.html" onclick="closeMenu()">Contact</a>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- =============================== -->
+<!-- MAIN CONTENT                    -->
+<!-- =============================== -->
 <main class="main-content">
 
-    <!-- HEADER -->
+    <!-- HEADER SECTION -->
     <a id="home"></a>
     <table class="header-table">
         <tr>
-            <td>
-                <img src="images/me.jpg" class="profile">
-            </td>
+            <td><img src="images/me.jpg" class="profile" alt="Profile photo"></td>
             <td class="intro-col">
                 <h1 class="name">Logan Roberts</h1>
                 <p class="title">Educator</p>
@@ -164,7 +173,10 @@
 
 </main>
 
-<!-- SCRIPT -->
+<!-- =============================== -->
+<!-- JS: HAMBURGER + SCROLLSPY       -->
+<!-- =============================== -->
+
 <script>
 function openMenu() {
     document.getElementById("mobileMenu").style.right = "0";
@@ -174,7 +186,7 @@ function closeMenu() {
     document.getElementById("mobileMenu").style.right = "-100%";
 }
 
-/* Scrollspy (desktop only) */
+/* Scrollspy desktop only */
 if (window.innerWidth > 900) {
     const sections = document.querySelectorAll('a[id]');
     const links = document.querySelectorAll('.spy');
