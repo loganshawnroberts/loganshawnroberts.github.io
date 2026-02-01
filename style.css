@@ -488,4 +488,72 @@ h2 {
         min-height: 180px;
     }
 }
+/* ====================================== */
+/* ADVOCACY ARTICLE CARDS                 */
+/* ====================================== */
 
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.article-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 18px 20px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.25s ease;
+}
+
+.article-item:hover {
+    background: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+.article-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.article-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.article-desc {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    line-height: 1.45;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .article-item {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .article-thumb {
+        width: 50px;
+        height: 50px;
+    }
+
+    .article-title {
+        font-size: 1.15rem;
+    }
+
+    .article-desc {
+        font-size: 1rem;
+    }
+}
