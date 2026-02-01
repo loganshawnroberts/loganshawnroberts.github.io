@@ -393,4 +393,99 @@ h2 {
         width: 60%;
     }
 }
+/* ====================================== */
+/* DESKTOP CONTACT PAGE REFINEMENTS       */
+/* ====================================== */
+
+.contact-content-desktop {
+    max-width: 700px;       /* wider, more comfortable */
+    margin-left: 220px;     /* space for left sidebar */
+    margin-right: 0px;      /* no right sidebar on contact page */
+    padding-top: 40px;
+}
+
+.contact-header {
+    font-size: 2.7rem;      /* larger heading for desktop */
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* FORM */
+.contact-desktop-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;              /* more spacious */
+}
+
+.contact-desktop-form label {
+    font-size: 1.3rem;
+}
+
+/* Larger, more elegant fields */
+.contact-desktop-form input,
+.contact-desktop-form textarea {
+    font-size: 1.2rem;
+    padding: 14px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background: #fafafa;
+    width: 100%;
+}
+
+.contact-desktop-form textarea {
+    min-height: 220px;      /* larger, more comfortable writing space */
+}
+
+.contact-desktop-form button {
+    font-size: 1.3rem;
+    padding: 14px 26px;
+    background: #333;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    width: 200px;
+}
+
+.contact-desktop-form button:hover {
+    background: #555;
+}
+
+/* ====================================== */
+/* MOBILE CONTACT IMPROVEMENTS            */
+/* ====================================== */
+
+@media (max-width: 900px) {
+
+    .contact-content-desktop {
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 95%;
+    }
+
+    .contact-header {
+        text-align: center;
+        font-size: 2.2rem;
+    }
+
+    .contact-intro {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+
+    .contact-desktop-form button {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .contact-desktop-form textarea {
+        min-height: 180px;
+    }
+}
 
