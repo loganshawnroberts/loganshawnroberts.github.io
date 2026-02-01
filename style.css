@@ -8,12 +8,12 @@ body {
     overflow-x: hidden;
 }
 
-/* Desktop/Mobile helpers */
+/* Helpers */
 .desktop-only { display: block; }
 .mobile-only { display: none; }
 
 /* ====================================== */
-/* FIXED LEFT NAVIGATION (DESKTOP)        */
+/* FIXED LEFT NAV                         */
 /* ====================================== */
 
 .left-menu {
@@ -36,15 +36,15 @@ body {
 .left-menu a:hover { text-decoration: underline; }
 
 /* ====================================== */
-/* FIXED RIGHT NAVIGATION (DESKTOP)       */
+/* FIXED RIGHT SIDEBAR (LEFT-ALIGNED TEXT)*/
 /* ====================================== */
 
 .right-nav {
     position: fixed;
     top: 60px;
     right: 20px;
-    width: 110px;
-    text-align: right;
+    width: 140px;
+    text-align: left;      /* NEW — left aligned */
     line-height: 1.6;
     z-index: 999;
 }
@@ -53,9 +53,8 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 8px;
+    letter-spacing: 0.03em;
 }
-
-.right-nav a:hover { text-decoration: underline; }
 
 .active-spy {
     font-weight: bold;
@@ -69,9 +68,13 @@ body {
 .main-content {
     max-width: 950px;
     margin-left: 220px;
-    margin-right: 140px;
+    margin-right: 160px;
     padding-bottom: 100px;
 }
+
+/* ====================================== */
+/* HEADER — larger name & title           */
+/* ====================================== */
 
 .header-table {
     width: 100%;
@@ -81,23 +84,38 @@ body {
 .profile {
     width: 170px;
     height: 170px;
-    object-fit: cover;
     border: 1px solid #aaa;
+    object-fit: cover;
     margin-top: 25px;
 }
 
+.name {
+    font-size: 3.2rem;      /* MUCH larger */
+    line-height: 1.1;
+}
+
 .title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;      /* Slightly larger bio */
+    line-height: 1.3;
+    margin-top: 6px;
+}
+
+/* SECTION HEADERS */
+h2 {
+    font-size: 2rem;
+    border-bottom: 1px solid #ccc;
+    margin-top: 50px;
+    padding-bottom: 6px;
 }
 
 /* ====================================== */
-/* EDUCATION GRID (DESKTOP)               */
+/* EDUCATION GRID (desktop)               */
 /* ====================================== */
 
 .education-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 45px;
+    gap: 35px;               /* slightly tighter */
 }
 
 .edu-item { display: flex; flex-direction: column; }
@@ -105,29 +123,42 @@ body {
 .edu-crest {
     width: 60px;
     height: 60px;
+    margin-bottom: 6px;       /* reduced spacing */
     object-fit: contain;
-    margin-bottom: 12px;
 }
 
 .edu-school {
+    margin: 0;                /* tighter */
     font-size: 1.4rem;
     font-variant-caps: small-caps;
 }
 
+.edu-degree {
+    margin: 4px 0 6px 0;      /* very tight vertical rhythm */
+    font-size: 1.2rem;
+}
+
+.edu-list li {
+    font-size: 1.05rem;
+    line-height: 1.45;
+    margin-bottom: 4px;       /* slightly reduced */
+}
+
 /* ====================================== */
-/* WORK SECTION (RYAN-STYLE 2 COL GRID)   */
+/* WORK GRID (desktop, 2 columns)         */
 /* ====================================== */
 
 .work-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 45px;
+    gap: 35px;
 }
 
 .work-item {
     display: grid;
     grid-template-columns: 55px auto;
-    gap: 14px;
+    gap: 10px;                /* tighter spacing */
+    align-items: start;
 }
 
 .work-logo {
@@ -137,6 +168,7 @@ body {
 }
 
 .work-title {
+    margin: 0;                /* no excess margin */
     font-size: 1.35rem;
     font-variant-caps: small-caps;
 }
@@ -148,99 +180,91 @@ body {
 }
 
 /* ====================================== */
-/* MOBILE SLIDE-IN MENU                   */
-/* ====================================== */
-
-.hamburger {
-    font-size: 2rem;
-    position: fixed;
-    top: 18px;
-    right: 18px;
-    z-index: 2000;
-    display: none; /* default hidden */
-}
-
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    height: 100%;
-    background: #fff;
-    box-shadow: -3px 0 12px rgba(0,0,0,0.2);
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    transition: right 0.3s ease;
-    z-index: 2500;
-}
-
-.mobile-menu a {
-    font-size: 1.5rem;
-    color: #333;
-    text-decoration: none;
-}
-
-.close-btn {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-/* ====================================== */
-/* MOBILE RESPONSIVE SETTINGS             */
+/* MOBILE LAYOUT                          */
 /* ====================================== */
 
 @media (max-width: 900px) {
 
-    /* Hide desktop elements */
     .desktop-only { display: none; }
     .mobile-only { display: block; }
 
-    /* Hamburger visible */
     .hamburger {
         display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        font-size: 2rem;
+        z-index: 2000;
     }
 
-    /* Content full width */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background: #fff;
+        box-shadow: -3px 0 12px rgba(0,0,0,0.2);
+        padding: 40px 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        transition: right 0.3s ease;
+        z-index: 3000;
+    }
+
+    .close-btn {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .mobile-menu a {
+        font-size: 1.5rem;
+        color: #333;
+        text-decoration: none;
+    }
+
     .main-content {
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0 auto;
+        padding: 0 15px;
         max-width: 95%;
-        padding: 0 10px;
     }
 
-    /* Header centered */
     .header-table { text-align: center; }
+
     .profile {
         width: 120px;
         height: 120px;
-        margin: 10px auto;
+        margin: 10px auto 15px;
     }
+
     .intro-col { text-align: center; }
 
-    /* Education & Work become vertical */
     .education-grid,
     .work-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 30px;
     }
 
-    /* Work items shrink */
     .work-item {
         grid-template-columns: 45px auto;
-        gap: 12px;
+        gap: 10px;
     }
 
-    /* Typography for mobile */
     h2 {
         font-size: 1.7rem;
         text-align: center;
+        margin-top: 35px;
     }
 
     p, li {
         font-size: 1.1rem;
-        line-height: 1.55;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-bottom: 40px;
     }
 }
