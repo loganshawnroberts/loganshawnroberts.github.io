@@ -2,9 +2,7 @@
 /* GLOBAL BASE STYLING                    */
 /* ====================================== */
 
-* {
-    font-family: 'EB Garamond', serif !important;
-}
+* { font-family: 'EB Garamond', serif !important; }
 
 body {
     margin: 0;
@@ -14,10 +12,10 @@ body {
 }
 
 .desktop-only { display: block; }
-.mobile-only { display: none; }
+.mobile-only  { display: none; }
 
 /* ====================================== */
-/* LEFT SIDEBAR (DESKTOP ONLY)            */
+/* LEFT SIDEBAR — DESKTOP ONLY           */
 /* ====================================== */
 
 .left-menu {
@@ -42,16 +40,16 @@ body {
 }
 
 /* ====================================== */
-/* RIGHT SIDEBAR (DESKTOP ONLY)           */
+/* RIGHT SIDEBAR — DESKTOP ONLY          */
 /* ====================================== */
 
 .right-nav {
     position: fixed;
     top: 60px;
-    right: 120px;         /* Adjusted to hug central column */
-    width: 140px;
+    right: 120px;      /* pulls sidebar closer to main text */
+    width: 150px;
     z-index: 999;
-    text-align: left;
+    text-align: left; /* your request */
     line-height: 1.6;
 }
 
@@ -61,35 +59,40 @@ body {
     margin-bottom: 8px;
 }
 
-/* REMOVE BULLETS FROM RIGHT SIDEBAR */
+/* REMOVE BULLETS COMPLETELY */
 .right-nav ul {
     list-style: none !important;
+    padding: 0 !important;
     margin: 0;
-    padding: 0;
 }
 
 .right-nav li {
     margin-bottom: 8px;
-    padding: 0;
+    padding-left: 0 !important;
 }
 
 .right-nav a {
-    text-decoration: none;
     color: #333;
+    text-decoration: none;
 }
 
 .right-nav a:hover {
     text-decoration: underline;
 }
 
+.active-spy {
+    font-weight: bold;
+    color: #4682B4 !important;
+}
+
 /* ====================================== */
-/* MAIN CONTENT COLUMN                    */
+/* MAIN CONTENT                           */
 /* ====================================== */
 
 .main-content {
     max-width: 950px;
     margin-left: 220px;
-    margin-right: 180px;  /* Reduced to fix the space */
+    margin-right: 200px;  /* matches new right-nav placement */
     padding-bottom: 100px;
 }
 
@@ -106,6 +109,7 @@ body {
     margin-top: 25px;
 }
 
+/* BIG NAME + SUBTITLE (your request) */
 .name {
     font-size: 3.2rem;
     line-height: 1.1;
@@ -116,10 +120,7 @@ body {
     margin-top: 6px;
 }
 
-/* ====================================== */
-/* SECTION HEADERS                        */
-/* ====================================== */
-
+/* SECTION HEADERS */
 h2 {
     font-size: 2rem;
     padding-bottom: 6px;
@@ -128,7 +129,7 @@ h2 {
 }
 
 /* ====================================== */
-/* EDUCATION (2×2 desktop)                */
+/* EDUCATION (2×2 GRID)                   */
 /* ====================================== */
 
 .education-grid {
@@ -146,8 +147,8 @@ h2 {
 .edu-crest {
     width: 60px;
     height: 60px;
-    object-fit: contain;
     margin-bottom: 6px;
+    object-fit: contain;
 }
 
 .edu-school {
@@ -168,7 +169,7 @@ h2 {
 }
 
 /* ====================================== */
-/* WORK (two-column, Ryan-style rows)     */
+/* WORK SECTION (Ryan-style 2-column)     */
 /* ====================================== */
 
 .work-grid {
@@ -186,6 +187,7 @@ h2 {
 .work-logo {
     width: 55px;
     height: 55px;
+    margin-top: 5px;
     object-fit: contain;
 }
 
@@ -202,24 +204,28 @@ h2 {
 }
 
 /* ====================================== */
-/* MOBILE OVERRIDES                       */
+/* MOBILE STYLES                          */
 /* ====================================== */
 
 @media (max-width: 900px) {
 
-    .desktop-only { display: none; }
-    .mobile-only { display: block; }
+    .desktop-only { display: none !important; }
+    .mobile-only  { display: block !important; }
 
+    /* Hamburger */
     .hamburger {
-        display: block;
+        display: block !important;
         position: fixed;
         top: 15px;
         right: 15px;
         font-size: 2rem;
         z-index: 2000;
+        cursor: pointer;
     }
 
+    /* Slide-in menu */
     .mobile-menu {
+        display: flex !important;
         position: fixed;
         top: 0;
         right: -100%;
@@ -229,13 +235,13 @@ h2 {
         box-shadow: -3px 0 12px rgba(0,0,0,0.2);
         padding: 40px 25px;
         z-index: 3000;
-        display: flex;
+        transition: right 0.3s ease;
         flex-direction: column;
         gap: 30px;
-        transition: right 0.3s ease;
     }
 
     .close-btn {
+        display: block !important;
         font-size: 2.4rem;
         margin-bottom: 20px;
         cursor: pointer;
@@ -247,11 +253,11 @@ h2 {
         color: #333;
     }
 
+    /* main content full width */
     .main-content {
-        margin-left: 0;
-        margin-right: 0;
-        max-width: 95%;
+        margin: 0 auto;
         padding: 0 15px;
+        max-width: 95%;
     }
 
     .header-table { text-align: center; }
@@ -264,17 +270,16 @@ h2 {
 
     .intro-col { text-align: center; }
 
+    /* Education & Work vertical */
     .education-grid,
     .work-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
-    .work-item {
-        grid-template-columns: 45px auto;
-        gap: 10px;
-    }
+    .work-item { grid-template-columns: 45px auto; }
 
+    /* Mobile text */
     h2 {
         font-size: 1.7rem;
         text-align: center;
