@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Helpers */
+/* Desktop/Mobile helpers */
 .desktop-only { display: block; }
 .mobile-only { display: none; }
 
@@ -44,9 +44,9 @@ body {
     top: 60px;
     right: 20px;
     width: 110px;
+    text-align: right;
     line-height: 1.6;
     z-index: 999;
-    text-align: right;
 }
 
 .right-title {
@@ -55,26 +55,15 @@ body {
     margin-bottom: 8px;
 }
 
-.right-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.right-nav li { margin-bottom: 8px; }
-
-.right-nav a { text-decoration: none; color: #333; }
-
 .right-nav a:hover { text-decoration: underline; }
 
-/* Scrollspy */
 .active-spy {
     font-weight: bold;
     color: #4682B4 !important;
 }
 
 /* ====================================== */
-/* MAIN CONTENT                           */
+/* MAIN CONTENT AREA                      */
 /* ====================================== */
 
 .main-content {
@@ -84,19 +73,25 @@ body {
     padding-bottom: 100px;
 }
 
-/* HEADER */
-.header-table { width: 100%; margin-bottom: 40px; }
+.header-table {
+    width: 100%;
+    margin-bottom: 40px;
+}
 
 .profile {
     width: 170px;
     height: 170px;
-    border: 1px solid #aaa;
     object-fit: cover;
+    border: 1px solid #aaa;
     margin-top: 25px;
 }
 
+.title {
+    font-size: 1.2rem;
+}
+
 /* ====================================== */
-/* EDUCATION GRID (desktop)               */
+/* EDUCATION GRID (DESKTOP)               */
 /* ====================================== */
 
 .education-grid {
@@ -119,10 +114,8 @@ body {
     font-variant-caps: small-caps;
 }
 
-.edu-degree { font-size: 1.2rem; margin-bottom: 10px; }
-
 /* ====================================== */
-/* WORK SECTION (desktop, Ryan-style 2-col)
+/* WORK SECTION (RYAN-STYLE 2 COL GRID)   */
 /* ====================================== */
 
 .work-grid {
@@ -146,7 +139,6 @@ body {
 .work-title {
     font-size: 1.35rem;
     font-variant-caps: small-caps;
-    margin-bottom: 4px;
 }
 
 .work-desc {
@@ -156,12 +148,8 @@ body {
 }
 
 /* ====================================== */
-/* MOBILE SLIDE-IN MENU (Option A)        */
+/* MOBILE SLIDE-IN MENU                   */
 /* ====================================== */
-
-.mobile-menu {
-    display: none;
-}
 
 .hamburger {
     font-size: 2rem;
@@ -169,7 +157,7 @@ body {
     top: 18px;
     right: 18px;
     z-index: 2000;
-    cursor: pointer;
+    display: none; /* default hidden */
 }
 
 .mobile-menu {
@@ -201,45 +189,54 @@ body {
 }
 
 /* ====================================== */
-/* MOBILE RESPONSIVE                      */
+/* MOBILE RESPONSIVE SETTINGS             */
 /* ====================================== */
 
 @media (max-width: 900px) {
 
+    /* Hide desktop elements */
     .desktop-only { display: none; }
     .mobile-only { display: block; }
 
+    /* Hamburger visible */
+    .hamburger {
+        display: block;
+    }
+
+    /* Content full width */
     .main-content {
-        margin: 0 auto;
+        margin-left: 0;
+        margin-right: 0;
         max-width: 95%;
         padding: 0 10px;
     }
 
+    /* Header centered */
     .header-table { text-align: center; }
-
     .profile {
         width: 120px;
         height: 120px;
         margin: 10px auto;
     }
-
     .intro-col { text-align: center; }
 
+    /* Education & Work become vertical */
     .education-grid,
     .work-grid {
         grid-template-columns: 1fr;
         gap: 35px;
     }
 
+    /* Work items shrink */
     .work-item {
         grid-template-columns: 45px auto;
         gap: 12px;
     }
 
+    /* Typography for mobile */
     h2 {
         font-size: 1.7rem;
         text-align: center;
-        margin-top: 30px;
     }
 
     p, li {
@@ -247,6 +244,3 @@ body {
         line-height: 1.55;
     }
 }
-
-
-/* END */
